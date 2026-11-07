@@ -31,7 +31,7 @@ function connect() {
   const name = $('#inName').value.trim(), pass = $('#inPass').value;
   $('#loginErr').textContent = '';
   if (ws) ws.close();
-  ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host);
+  ws = new WebSocket(window.SERVER_URL || ((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host));
   ws.onopen = () => send({ t: 'login', name, pass });
   ws.onmessage = (e) => handle(JSON.parse(e.data));
   ws.onclose = () => { if (started) { addLog('<i>Conexão perdida. Recarregue a página.</i>'); } };

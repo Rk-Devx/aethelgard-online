@@ -13,7 +13,8 @@ const { Game, defaultRecord } = require('./game');
 
 const PORT = process.env.PORT || 3000;
 const PUB = path.join(__dirname, '..', 'public');
-const DB_FILE = path.join(__dirname, '..', 'data', 'players.json');
+// DATA_DIR permite apontar para um disco persistente na hospedagem (ex.: /data)
+const DB_FILE = path.join(process.env.DATA_DIR || path.join(__dirname, '..', 'data'), 'players.json');
 
 // ---------- "banco de dados" em JSON (troque por SQLite/Postgres depois) ----------
 let DB = {};
@@ -30,7 +31,7 @@ setInterval(saveDB, 15000);
 const hashPass = (pass, salt) => crypto.scryptSync(pass, salt, 32).toString('hex');
 
 // ---------- servidor de arquivos estáticos ----------
-const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.ico': 'image/x-icon' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.ico': 'image/x-icon', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json', '.json': 'application/json' };
 const server = http.createServer((req, res) => {
   let url = decodeURIComponent((req.url || '/').split('?')[0]);
   if (url === '/') url = '/index.html';
