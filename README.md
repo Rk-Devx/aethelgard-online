@@ -1,3 +1,4 @@
+HEAD
 # ⚔️ Aethelgard Online — protótipo de MMORPG 2D
 
 Protótipo de MMORPG 2D top-down (visão de cima, tiles), jogável no navegador, inspirado no estilo
@@ -66,3 +67,4 @@ o que dificulta trapaças.
 - Pathfinding (A*) para tocar no chão e o personagem andar até lá.
 - Sons e música; animações de sprite por direção.
 - Hospedar em uma VPS / Railway / Render (o servidor lê a porta de `PORT`).
+=======
