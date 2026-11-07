@@ -1,0 +1,28 @@
+COMO USAR SEUS PIXEL ARTS
+=========================
+Salve PNGs com fundo transparente nesta pasta. Arquivo ausente = o jogo usa o desenho padrao.
+Depois de salvar, aperte Ctrl+F5 no navegador (nao precisa reiniciar o servidor).
+
+PERSONAGEM (folha de sprites)
+  player.png            -> usado por todos os estilos
+  player_sword.png      -> (opcional) so quando estiver de Espada
+  player_bow.png        -> (opcional) so quando estiver de Arco
+  player_staff.png      -> (opcional) so quando estiver de Cajado
+  Layout: 4 LINHAS, quadros QUADRADOS (ex.: 32x32). Colunas = quadros.
+     linha 1 = olhando para BAIXO
+     linha 2 = olhando para a ESQUERDA
+     linha 3 = olhando para a DIREITA
+     linha 4 = olhando para CIMA
+     coluna 1 = parado; colunas 2, 3, 4... = animacao de andar
+  Ex.: 3 colunas -> imagem de 96x128 (3 quadros de 32 de largura, 4 linhas de 32 de altura)
+  Sem animacao: 1 coluna (32x128).
+
+MONSTROS (pasta monsters/)
+  slime.png rat.png wolf.png goblin.png scorpion.png skeleton.png ogre.png drake.png
+  Layout: UMA linha de quadros quadrados lado a lado. Todos os quadros viram a animacao em loop.
+  Ex.: 2 quadros de 32x32 -> imagem de 64x32. Imagem unica 32x32 = sem animacao.
+  Ogro e Draco sao desenhados maiores automaticamente.
+
+TILES / CHAO (pasta tiles/) - um quadrado por arquivo, ex.: 32x32
+  grass.png water.png tree.png sand.png town.png wall.png dark.png
+  tree.png e desenhado POR CIMA de grass.png (use fundo transparente na arvore).

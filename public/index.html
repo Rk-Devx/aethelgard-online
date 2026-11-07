@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Aethelgard Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="cv"></canvas>
+
+  <!-- LOGIN -->
+  <div id="login">
+    <div class="card">
+      <h1>⚔️ Aethelgard</h1>
+      <p class="sub">MMORPG 2D — protótipo</p>
+      <input id="inName" placeholder="Nome do herói" maxlength="14" autocomplete="username">
+      <input id="inPass" type="password" placeholder="Senha" maxlength="40" autocomplete="current-password">
+      <button id="btnLogin">Entrar / Criar conta</button>
+      <p id="loginErr" class="err"></p>
+      <p class="hint">Conta nova? Basta digitar um nome e uma senha.</p>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="status">
+      <div class="line"><b id="hName"></b> <span id="hLv"></span> <span id="hGold" class="gold"></span></div>
+      <div class="zone" id="hZone"></div>
+      <div class="bar hp"><i id="bHp"></i><span id="tHp"></span></div>
+      <div class="bar mp"><i id="bMp"></i><span id="tMp"></span></div>
+      <div class="bar xp"><i id="bXp"></i><span id="tXp"></span></div>
+      <div class="btns">
+        <button id="btnSkills">📜 Perfil</button>
+        <button id="btnShop">🏪 Loja</button>
+        <button id="btnPvp">☠ PvP: off</button>
+      </div>
+    </div>
+
+    <canvas id="mm" width="120" height="120"></canvas>
+
+    <div id="chat">
+      <div id="log"></div>
+      <input id="chatIn" placeholder="Enter para falar..." maxlength="100" autocomplete="off">
+    </div>
+
+    <div id="actions">
+      <button class="sty" data-s="sword">⚔️<small>1</small></button>
+      <button class="sty" data-s="bow">🏹<small>2</small></button>
+      <button class="sty" data-s="staff">🔮<small>3</small></button>
+      <button id="btnSp">✨<small>Espaço</small><u id="spCd"></u></button>
+      <button id="potHp">❤️<small id="nHp">0</small></button>
+      <button id="potMp">💧<small id="nMp">0</small></button>
+    </div>
+
+    <div id="pad">
+      <button data-dx="0" data-dy="-1" style="grid-area:u">▲</button>
+      <button data-dx="-1" data-dy="0" style="grid-area:l">◀</button>
+      <button data-dx="1" data-dy="0" style="grid-area:r">▶</button>
+      <button data-dx="0" data-dy="1" style="grid-area:d">▼</button>
+    </div>
+
+    <div id="skills" class="panel hidden"><h3>Perfil <button class="x" data-close="skills">✕</button></h3><div id="skBody"></div></div>
+    <div id="shop" class="panel hidden"><h3>Loja da Vila <button class="x" data-close="shop">✕</button></h3><div id="shopBody"></div></div>
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>

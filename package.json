@@ -1,0 +1,13 @@
+{
+  "name": "aethelgard-online",
+  "version": "0.1.0",
+  "description": "Protótipo de MMORPG 2D top-down (Node.js + WebSocket + Canvas)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
